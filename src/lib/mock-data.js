@@ -232,3 +232,21 @@ export const vendorProducts = [
     image: "",
   },
 ];
+
+export const analyticsData = [
+  { name: "01 Mar", views: 400, inquiries: 24, revenue: 2400 },
+  { name: "05 Mar", views: 1200, inquiries: 45, revenue: 4500 },
+  { name: "10 Mar", views: 900, inquiries: 32, revenue: 3200 },
+  { name: "15 Mar", views: 2400, inquiries: 84, revenue: 8400 },
+  { name: "20 Mar", views: 1800, inquiries: 56, revenue: 5600 },
+  { name: "25 Mar", views: 2800, inquiries: 92, revenue: 9200 },
+  { name: "30 Mar", views: 3200, inquiries: 110, revenue: 11000 },
+];
+
+export const inquiryDistribution = [
+  { name: "Furniture", value: 45, color: "#BF953F" },
+  { name: "Lighting", value: 25, color: "#22C55E" },
+  { name: "Decor", value: 15, color: "#3B82F6" },
+  { name: "Other", value: 15, color: "#94A3B8" },
+];
+
