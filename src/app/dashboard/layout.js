@@ -23,7 +23,8 @@ export default function DashboardLayout({ children }) {
   const pageTitle = pathname === "/dashboard" ? "Overview" : 
                     pathname === "/dashboard/products" ? "Products Pool" : 
                     pathname === "/dashboard/inquiries" ? "Customer Inquiries" :
-                    pathname === "/dashboard/settings" ? "Settings" : "";
+                    pathname === "/dashboard/settings" ? "Settings" : 
+                    pathname === "/dashboard/products/add" ? "Add New Product" : "";
 
   return (
     <SidebarProvider>

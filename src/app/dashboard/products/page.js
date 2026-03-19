@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 import { vendorProducts } from "@/lib/mock-data";
 import { 
   DropdownMenu, 
@@ -42,9 +43,11 @@ export default function DashboardProductsPage() {
            <Button variant="outline" className="h-11 w-11 p-0 rounded-xl border-border border-2">
               <Filter className="h-4 w-4" />
            </Button>
-           <Button className="h-11 px-6 rounded-xl bg-accent text-accent-foreground font-black text-xs uppercase tracking-widest gap-2">
-              <Plus className="h-4 w-4" /> Add Product
-           </Button>
+           <Link href="/dashboard/products/add">
+              <Button className="h-11 px-6 rounded-xl bg-accent text-accent-foreground font-black text-xs uppercase tracking-widest gap-2">
+                 <Plus className="h-4 w-4" /> Add Product
+              </Button>
+           </Link>
         </div>
       </div>
 
