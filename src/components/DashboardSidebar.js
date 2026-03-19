@@ -182,16 +182,22 @@ export function DashboardSidebar() {
                <p className="text-xs font-black text-sidebar-foreground uppercase tracking-widest opacity-30">Account ID: #84210</p>
             </div>
             <DropdownMenuSeparator className="bg-sidebar-border" />
-            <DropdownMenuItem className="p-3 text-sidebar-foreground/70 focus:bg-sidebar-accent focus:text-accent font-semibold text-sm rounded-lg gap-3">
-              <User className="h-4 w-4" /> Profile Details
-            </DropdownMenuItem>
-            <DropdownMenuItem className="p-3 text-sidebar-foreground/70 focus:bg-sidebar-accent focus:text-accent font-semibold text-sm rounded-lg gap-3">
-              <Building2 className="h-4 w-4" /> Business Verification
-            </DropdownMenuItem>
+            <Link href="/dashboard/settings?tab=account">
+               <DropdownMenuItem className="p-3 text-sidebar-foreground/70 focus:bg-sidebar-accent focus:text-accent font-semibold text-sm rounded-lg gap-3 cursor-pointer">
+                  <User className="h-4 w-4" /> Profile Details
+               </DropdownMenuItem>
+            </Link>
+            <Link href="/dashboard/settings?tab=business">
+               <DropdownMenuItem className="p-3 text-sidebar-foreground/70 focus:bg-sidebar-accent focus:text-accent font-semibold text-sm rounded-lg gap-3 cursor-pointer">
+                  <Building2 className="h-4 w-4" /> Business Verification
+               </DropdownMenuItem>
+            </Link>
             <DropdownMenuSeparator className="bg-sidebar-border" />
-            <DropdownMenuItem className="p-3 text-destructive focus:bg-destructive/10 focus:text-destructive font-semibold text-sm rounded-lg gap-3">
-              <LogOut className="h-4 w-4" /> Sign Out
-            </DropdownMenuItem>
+            <Link href="/">
+               <DropdownMenuItem className="p-3 text-destructive focus:bg-destructive/10 focus:text-destructive font-semibold text-sm rounded-lg gap-3 cursor-pointer">
+                  <LogOut className="h-4 w-4" /> Sign Out
+               </DropdownMenuItem>
+            </Link>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarFooter>

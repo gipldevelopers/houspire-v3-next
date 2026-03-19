@@ -16,9 +16,27 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { recentInquiries } from "@/lib/mock-data";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { 
+  Dialog, 
+  DialogContent, 
+  DialogDescription, 
+  DialogHeader, 
+  DialogTitle, 
+  DialogTrigger,
+  DialogFooter
+} from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 
 export default function DashboardInquiriesPage() {
+  const [isExporting, setIsExporting] = useState(false);
+
+  const handleExport = () => {
+    setIsExporting(true);
+    setTimeout(() => setIsExporting(false), 2000);
+  };
+
   return (
     <div className="space-y-8 animate-in fade-in-0 slide-in-from-bottom-4 duration-700">
       {/* Header */}
@@ -35,8 +53,16 @@ export default function DashboardInquiriesPage() {
            <Button variant="outline" className="h-11 px-4 rounded-xl border-border border-2 font-bold text-xs gap-2">
               <Filter className="h-4 w-4" /> Filters
            </Button>
-           <Button className="h-11 px-6 rounded-xl bg-primary text-primary-foreground font-black text-xs uppercase tracking-widest gap-2">
-              Export CSV
+           <Button 
+             onClick={handleExport}
+             className="h-11 px-6 rounded-xl bg-primary text-primary-foreground font-black text-xs uppercase tracking-widest gap-2 min-w-[140px]"
+           >
+              {isExporting ? (
+                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center gap-2">
+                    <div className="h-3 w-3 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Exporting...
+                 </motion.div>
+              ) : "Export CSV"}
            </Button>
         </div>
       </div>
@@ -93,9 +119,35 @@ export default function DashboardInquiriesPage() {
                      <Phone className="h-3.5 w-3.5" strokeWidth={2} /> Call
                   </div>
                </div>
-               <Button size="sm" className="bg-accent text-accent-foreground font-black text-[10px] uppercase tracking-widest h-9 rounded-lg gap-2 group/btn">
-                  Respond Lead <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1 transition-transform" />
-               </Button>
+               <Dialog>
+                  <DialogTrigger asChild>
+                    <Button size="sm" className="bg-accent text-accent-foreground font-black text-[10px] uppercase tracking-widest h-9 rounded-lg gap-2 group/btn">
+                       Respond Lead <ArrowRight className="h-3.5 w-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent className="rounded-[2rem] border-2">
+                    <DialogHeader className="mb-4">
+                      <DialogTitle className="text-2xl font-black tracking-tight">Reply to {inquiry.customerName}</DialogTitle>
+                      <DialogDescription className="text-xs font-medium">Your response will be sent to the customer's email and dashboard.</DialogDescription>
+                    </DialogHeader>
+                    <div className="space-y-6">
+                      <div className="p-4 bg-muted/50 rounded-2xl border border-border/50">
+                        <p className="text-[10px] font-black uppercase text-muted-foreground mb-1 tracking-widest">Original Inquiry</p>
+                        <p className="text-xs italic text-foreground/70 leading-relaxed font-medium">"{inquiry.message}"</p>
+                      </div>
+                      <div className="space-y-3">
+                        <label className="text-[10px] font-black uppercase text-muted-foreground ml-1 tracking-widest">Your Message</label>
+                        <Textarea 
+                          placeholder="Type your response here... (e.g. availability, pricing, shipping info)" 
+                          className="min-h-[150px] rounded-2xl bg-muted/30 border-0 text-sm font-medium"
+                        />
+                      </div>
+                    </div>
+                    <DialogFooter className="mt-8">
+                       <Button className="w-full h-14 bg-primary text-primary-foreground font-black uppercase tracking-widest text-xs rounded-2xl shadow-xl shadow-primary/20">Send Response</Button>
+                    </DialogFooter>
+                  </DialogContent>
+               </Dialog>
             </div>
           </motion.div>
         ))}

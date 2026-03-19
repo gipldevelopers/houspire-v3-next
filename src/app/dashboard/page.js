@@ -16,6 +16,7 @@ import {
   CheckCircle2,
   AlertCircle
 } from "lucide-react";
+import Link from "next/link";
 import { 
   AreaChart, 
   Area, 
@@ -73,6 +74,7 @@ export default function DashboardOverviewPage() {
       </div>
 
 
+
       {/* Profile Health Progress */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
          <Card className="lg:col-span-2 p-6 rounded-3xl border border-border/50 bg-accent/5 overflow-hidden group">
@@ -88,12 +90,15 @@ export default function DashboardOverviewPage() {
                   <Progress value={75} className="h-2 rounded-full bg-accent/10" indicatorClassName="bg-accent" />
                   <p className="text-[13px] text-muted-foreground font-medium">Add <span className="text-foreground font-bold">GST Certificate</span> to unlock higher visibility.</p>
                </div>
-               <Button variant="outline" className="h-10 px-6 rounded-lg border font-black text-[9px] uppercase tracking-widest bg-card hover:bg-accent hover:text-accent-foreground transition-all">
-                  Tasks
-               </Button>
+               <Link href="/dashboard/settings">
+                  <Button variant="outline" className="h-10 px-6 rounded-lg border font-black text-[9px] uppercase tracking-widest bg-card hover:bg-accent hover:text-accent-foreground transition-all">
+                     Tasks
+                  </Button>
+               </Link>
             </div>
          </Card>
       </div>
+
 
 
       {/* Stats Grid */}
@@ -269,10 +274,13 @@ export default function DashboardOverviewPage() {
                  <h2 className="text-lg font-black text-foreground tracking-tight">Top Products</h2>
                  <p className="text-xs text-muted-foreground font-medium">By traffic and interest</p>
               </div>
-              <Button variant="outline" className="h-8 px-4 rounded-lg border font-black text-[9px] uppercase tracking-widest gap-2">
-                 Inventory <ChevronRight className="h-3 w-3" />
-              </Button>
+              <Link href="/dashboard/products">
+                 <Button variant="outline" className="h-8 px-4 rounded-lg border font-black text-[9px] uppercase tracking-widest gap-2">
+                    Inventory <ChevronRight className="h-3 w-3" />
+                 </Button>
+              </Link>
            </div>
+
            
            <div className="space-y-3">
               {vendorProducts.slice(0, 3).map((product, i) => (
@@ -307,8 +315,11 @@ export default function DashboardOverviewPage() {
                <h2 className="text-lg font-black text-foreground tracking-tight">Recent Leads</h2>
                <p className="text-xs text-muted-foreground font-medium">Potential customers awaiting response</p>
             </div>
-            <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground rounded-lg"><ArrowUpRight className="h-4 w-4" /></Button>
+            <Link href="/dashboard/inquiries">
+               <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground rounded-lg"><ArrowUpRight className="h-4 w-4" /></Button>
+            </Link>
           </div>
+
           
           <div className="space-y-2 relative z-10">
              {recentInquiries.slice(0, 3).map((inquiry, i) => (
@@ -333,11 +344,14 @@ export default function DashboardOverviewPage() {
              ))}
           </div>
           
-          <Button variant="outline" className="w-full h-10 rounded-xl border font-black text-[9px] uppercase tracking-widest gap-2 bg-card hover:bg-muted transition-all relative z-10">
-             Open Lead Center <ArrowRight className="h-3 w-3" />
-          </Button>
+          <Link href="/dashboard/inquiries">
+             <Button variant="outline" className="w-full h-10 rounded-xl border font-black text-[9px] uppercase tracking-widest gap-2 bg-card hover:bg-muted transition-all relative z-10">
+                Open Lead Center <ArrowRight className="h-3 w-3" />
+             </Button>
+          </Link>
         </div>
       </div>
+
 
       
       {/* Premium Tips / System Notifications */}
@@ -351,11 +365,14 @@ export default function DashboardOverviewPage() {
                     <h3 className="text-lg font-black tracking-tight">Boost Your Visibility</h3>
                     <p className="text-white/80 font-medium text-xs leading-relaxed">Vendors with complete profiles get 2.5x more inquiries.</p>
                  </div>
-                 <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest group-hover:translate-x-1 transition-transform">
-                    View Tips <ArrowRight className="h-3 w-3" />
-                 </button>
+                 <Link href="/dashboard/support">
+                    <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest group-hover:translate-x-1 transition-transform">
+                       View Tips <ArrowRight className="h-3 w-3" />
+                    </button>
+                 </Link>
               </div>
           </div>
+
           
           <div className="p-6 rounded-3xl bg-orange-500 text-white shadow-xl group cursor-pointer overflow-hidden relative">
               <div className="relative z-10 space-y-4">
@@ -366,11 +383,14 @@ export default function DashboardOverviewPage() {
                     <h3 className="text-lg font-black tracking-tight">Security Alert</h3>
                     <p className="text-white/80 font-medium text-xs leading-relaxed">Update your backup phone number for secure payouts.</p>
                  </div>
-                 <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest group-hover:translate-x-1 transition-transform">
-                    Secure Account <ArrowRight className="h-3 w-3" />
-                 </button>
+                 <Link href="/dashboard/settings">
+                    <button className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest group-hover:translate-x-1 transition-transform">
+                       Secure Account <ArrowRight className="h-3 w-3" />
+                    </button>
+                 </Link>
               </div>
           </div>
+
       </div>
 
     </div>
