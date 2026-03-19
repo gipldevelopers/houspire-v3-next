@@ -24,7 +24,8 @@ export default function DashboardLayout({ children }) {
                     pathname === "/dashboard/products" ? "Products Pool" : 
                     pathname === "/dashboard/inquiries" ? "Customer Inquiries" :
                     pathname === "/dashboard/settings" ? "Settings" : 
-                    pathname === "/dashboard/products/add" ? "Add New Product" : "";
+                    pathname === "/dashboard/products/add" ? "Add New Product" :
+                    pathname === "/dashboard/support" ? "Support Center" : "";
 
   return (
     <SidebarProvider>
