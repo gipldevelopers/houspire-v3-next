@@ -79,8 +79,8 @@ export function DashboardSidebar() {
   const { state } = useSidebar();
 
   return (
-    <Sidebar collapsible="icon" className="border-r border-sidebar-border bg-sidebar shadow-xl">
-      <SidebarHeader className="p-4 bg-sidebar">
+    <Sidebar variant="sidebar" collapsible="icon" className="border-r border-sidebar-border bg-sidebar shadow-xl z-50 h-screen w-64 data-[state=collapsed]:w-[48px] shrink-0 transition-all duration-300">
+      <SidebarHeader className="p-6 bg-sidebar">
         <Link href="/" className="flex items-center gap-3 px-2 group">
           <div className="h-9 w-9 rounded-xl bg-accent flex items-center justify-center text-accent-foreground font-bold text-lg shadow-xl shadow-accent/20 group-hover:scale-105 transition-transform duration-300 ring-2 ring-accent/10 shrink-0">
             H
