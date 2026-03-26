@@ -69,7 +69,7 @@ const majorCategories = [
       },
       {
          title: "Dining & Kitchen",
-         image: "https://images.unsplash.com/photo-1556911220-e15201c7475f?q=80&w=400&auto=format&fit=crop",
+         image: "/images/categories/dining_kitchen.png",
          items: ["Dining Table Sets", "Kitchen Cabinets", "Bar Stools"]
       },
       {
@@ -92,7 +92,7 @@ const majorCategories = [
      gridItems: [
         {
            title: "Modular Kitchen",
-           image: "https://images.unsplash.com/photo-1556911220-e15201c7475f?q=80&w=300&auto=format&fit=crop",
+           image: "/images/categories/modular_kitchen.png",
            items: ["L-Shaped Kitchen", "U-Shaped Kitchen", "Modular Accessories"]
         },
         {
@@ -107,12 +107,12 @@ const majorCategories = [
         },
         {
            title: "Electricals",
-           image: "https://images.unsplash.com/photo-1558002038-103792e1773d?q=80&w=300&auto=format&fit=crop",
+           image: "/images/categories/electricals.png",
            items: ["Designer Fans", "Modular Switches", "Smart Lighting"]
         },
         {
            title: "Construction",
-           image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=400&auto=format&fit=crop",
+           image: "/images/categories/construction.png",
            items: ["Plywoods", "TMT Bars", "Cement & Bricks"]
         },
         {
@@ -470,6 +470,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* --- BROWSE BY CITY --- */}
+      <section className="container py-16 space-y-8 mx-auto px-4">
+        <div className="flex items-center justify-between">
+          <div>
+            <h2 className="text-xl md:text-2xl font-bold text-foreground">Browse by City</h2>
+            <p className="text-sm text-muted-foreground mt-1">Find trusted vendors in your city</p>
+          </div>
+          <Link href="/search" className="text-sm text-accent font-medium flex items-center gap-1 hover:gap-2 transition-all">
+            All cities <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {cities.map((city, i) => (
+            <motion.div key={city.name} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <Link href={`/search?city=${city.name}`} className="group relative block rounded-lg overflow-hidden aspect-[3/4]">
+                <img src={cityImages[city.name]} alt={city.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-3 space-y-0.5">
+                  <h3 className="text-sm font-bold text-primary-foreground flex items-center gap-1">
+                    <MapPin className="h-3 w-3" strokeWidth={1.5} /> {city.name}
+                  </h3>
+                  <p className="text-[10px] text-primary-foreground/60 tabular-nums">{city.vendors} vendors · {city.products.toLocaleString()} products</p>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* --- AD BANNER SECTION --- */}
       <AnimatePresence>
         {showAd && (
@@ -730,34 +759,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- BROWSE BY CITY --- */}
-      <section className="container py-16 space-y-8 mx-auto px-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h2 className="text-xl md:text-2xl font-bold text-foreground">Browse by City</h2>
-            <p className="text-sm text-muted-foreground mt-1">Find trusted vendors in your city</p>
-          </div>
-          <Link href="/search" className="text-sm text-accent font-medium flex items-center gap-1 hover:gap-2 transition-all">
-            All cities <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
-          </Link>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-          {cities.map((city, i) => (
-            <motion.div key={city.name} custom={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <Link href={`/search?city=${city.name}`} className="group relative block rounded-lg overflow-hidden aspect-[3/4]">
-                <img src={cityImages[city.name]} alt={city.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-3 space-y-0.5">
-                  <h3 className="text-sm font-bold text-primary-foreground flex items-center gap-1">
-                    <MapPin className="h-3 w-3" strokeWidth={1.5} /> {city.name}
-                  </h3>
-                  <p className="text-[10px] text-primary-foreground/60 tabular-nums">{city.vendors} vendors · {city.products.toLocaleString()} products</p>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       <footer className="border-t bg-card">
         <div className="container py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm mx-auto px-4">

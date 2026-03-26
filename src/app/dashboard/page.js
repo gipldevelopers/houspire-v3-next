@@ -513,9 +513,9 @@ export default function RedesignedVendorDashboard() {
               <p className="text-lg font-black text-slate-900">2.4h</p>
             </div>
           </div>
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold h-12 px-6 rounded-xl shadow-lg shadow-blue-500/20">
+          {/* <Button className="bg-blue-600 hover:bg-blue-700 text-white font-bold h-12 px-6 rounded-xl shadow-lg shadow-blue-500/20">
             <Plus className="mr-2 h-5 w-5" /> Add Product
-          </Button>
+          </Button> */}
         </div>
       </div>
 
@@ -642,9 +642,11 @@ export default function RedesignedVendorDashboard() {
                       <p className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Complete</p>
                    </div>
                 </div>
-                <Button className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black rounded-xl h-12">
-                   Complete Profile
-                </Button>
+                <Link href="/dashboard/settings" className="w-full">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-500 text-white font-black rounded-xl h-12">
+                     Complete Profile
+                  </Button>
+                </Link>
              </div>
           </div>
 
