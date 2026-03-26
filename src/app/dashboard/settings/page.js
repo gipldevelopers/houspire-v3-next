@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
@@ -38,7 +38,7 @@ const tabs = [
   { id: "hours", label: "Business Hours", icon: Clock, description: "Set your store's operating schedule" },
 ];
 
-export default function SettingsPage() {
+function SettingsContent() {
   const searchParams = useSearchParams();
   const initialTab = searchParams.get('tab') || 'business';
   const [activeTab, setActiveTab] = useState(initialTab);
@@ -410,7 +410,7 @@ export default function SettingsPage() {
                 </div>
             )}
 
-            {activeTab === "hours" && (activeTab === "hours" && (
+            {activeTab === "hours" && (
               <div className="max-w-2xl">
                  <Card className="rounded-[2.5rem] border-2 border-border/50 shadow-xl overflow-hidden">
                     <CardHeader className="p-8">
@@ -447,11 +447,19 @@ export default function SettingsPage() {
                     </CardFooter>
                  </Card>
               </div>
-            ))}
+            )}
           </motion.div>
         </AnimatePresence>
       </main>
     </div>
+  );
+}
+
+export default function SettingsPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SettingsContent />
+    </Suspense>
   );
 }
 

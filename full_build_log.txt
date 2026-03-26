@@ -1,0 +1,37 @@
+
+> houspire-vendorshub@0.1.0 build
+> next build
+
+⚠ `eslint` configuration in next.config.mjs is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.mjs options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+▲ Next.js 16.2.0 (Turbopack)
+
+  Creating an optimized production build ...
+
+> Build error occurred
+Error: Turbopack build failed with 1 errors:
+./src/app/vendor/[id]/products/page.js:22:10
+the name `useSearchParams` is defined multiple times
+  [90m20 |[0m [36mimport[0m { motion } [36mfrom[0m [32m"framer-motion"[0m;
+  [90m21 |[0m [36mimport[0m { useState, useMemo, [33mSuspense[0m } [36mfrom[0m [32m"react"[0m;
+[31m[1m>[0m [90m22 |[0m [36mimport[0m { useSearchParams } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m   |[0m          [31m[1m^^^^^^^^^^^^^^^[0m
+  [90m23 |[0m
+  [90m24 |[0m [36mfunction[0m [33mCatalogContent[0m() {
+  [90m25 |[0m   [36mconst[0m { id } = useParams();
+
+Ecmascript file had an error
+
+Import traces:
+  Client Component Browser:
+    ./src/app/vendor/[id]/products/page.js [Client Component Browser]
+    ./src/app/vendor/[id]/products/page.js [Server Component]
+
+  Client Component SSR:
+    ./src/app/vendor/[id]/products/page.js [Client Component SSR]
+    ./src/app/vendor/[id]/products/page.js [Server Component]
+
+
+    at <unknown> (./src/app/vendor/[id]/products/page.js:22:10)

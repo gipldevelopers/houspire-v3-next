@@ -13,7 +13,10 @@ import {
   Building2,
   ChevronRight,
   LogOut,
-  Sparkles
+  Sparkles,
+  BarChart3,
+  Briefcase,
+  Star
 } from "lucide-react";
 import {
   Sidebar,
@@ -58,6 +61,23 @@ const items = [
     url: "/dashboard/inquiries",
     icon: MessageSquare,
     badge: "5",
+  },
+  {
+    title: "Projects",
+    url: "/dashboard/projects",
+    icon: Briefcase,
+    badge: "3",
+  },
+  {
+    title: "Traffic",
+    url: "/dashboard/traffic",
+    icon: BarChart3,
+  },
+  {
+    title: "Reviews",
+    url: "/dashboard/reviews",
+    icon: Star,
+    badge: "4.8",
   },
 ];
 

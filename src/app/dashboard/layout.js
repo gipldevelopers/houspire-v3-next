@@ -23,6 +23,8 @@ export default function DashboardLayout({ children }) {
   const pageTitle = pathname === "/dashboard" ? "Overview" : 
                     pathname === "/dashboard/products" ? "Products Pool" : 
                     pathname === "/dashboard/inquiries" ? "Customer Inquiries" :
+                    pathname === "/dashboard/projects" ? "Project Portfolio" :
+                    pathname === "/dashboard/projects/new" ? "Showcase Builder" :
                     pathname === "/dashboard/settings" ? "Settings" : 
                     pathname === "/dashboard/products/add" ? "Add New Product" :
                     pathname === "/dashboard/support" ? "Support Center" : "";
@@ -78,7 +80,7 @@ export default function DashboardLayout({ children }) {
                    </div>
                    <div className="space-y-0.5">
                       <p className="text-[10px] text-muted-foreground font-extrabold uppercase tracking-widest leading-none">Status</p>
-                      <p className="text-sm font-bold text-foreground flex items-center gap-1.5 whitespace-nowrap">GST Verified <Badge className="bg-success text-white text-[9px] h-4 font-black px-1.5 border-0">ACTIVE</Badge></p>
+                      <div className="text-sm font-bold text-foreground flex items-center gap-1.5 whitespace-nowrap">GST Verified <Badge className="bg-success text-white text-[9px] h-4 font-black px-1.5 border-0">ACTIVE</Badge></div>
                    </div>
                 </div>
                 <div className="h-8 w-px bg-border/50 hidden sm:block" />
@@ -91,8 +93,10 @@ export default function DashboardLayout({ children }) {
                       <p className="text-sm font-bold text-foreground whitespace-nowrap">End-to-End Encrypted</p>
                    </div>
                 </div>
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground text-[11px] font-black tracking-widest uppercase h-10 px-6 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95 ml-auto" size="sm">
-                   <Plus className="h-4 w-4 mr-2" /> New Product
+                <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground text-[11px] font-black tracking-widest uppercase h-10 px-6 rounded-xl shadow-lg shadow-primary/20 transition-all active:scale-95 ml-auto" size="sm">
+                  <Link href="/dashboard/products/add">
+                    <Plus className="h-4 w-4 mr-2" /> New Product
+                  </Link>
                 </Button>
             </div>
 

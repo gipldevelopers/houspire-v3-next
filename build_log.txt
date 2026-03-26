@@ -1,0 +1,30 @@
+
+> houspire-vendorshub@0.1.0 build
+> next build
+
+▲ Next.js 16.2.0 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.3s
+  Running TypeScript ...
+  Finished TypeScript in 154ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/28) ...
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+⨯ useSearchParams() should be wrapped in a suspense boundary at page "/dashboard/settings". Read more: https://nextjs.org/docs/messages/missing-suspense-with-csr-bailout
+    at S (D:\office\houspire\houspire-vendors\.next\server\chunks\ssr\node_modules_next_0w2y7fz._.js:2:2692)
+    at r (D:\office\houspire\houspire-vendors\.next\server\chunks\ssr\node_modules_next_0w2y7fz._.js:4:6760)
+    at D:\office\houspire\houspire-vendors\.next\server\chunks\ssr\src_app_dashboard_settings_page_0xxjpp5.js:1:4424
+    at an (D:\office\houspire\houspire-vendors\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84267)
+    at ai (D:\office\houspire\houspire-vendors\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86086)
+    at al (D:\office\houspire\houspire-vendors\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:107860)
+    at ao (D:\office\houspire\houspire-vendors\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:105275)
+    at aa (D:\office\houspire\houspire-vendors\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:84619)
+    at ai (D:\office\houspire\houspire-vendors\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:86135)
+    at ai (D:\office\houspire\houspire-vendors\node_modules\next\dist\compiled\next-server\app-page-turbo.runtime.prod.js:2:104615)
+Error occurred prerendering page "/dashboard/settings". Read more: https://nextjs.org/docs/messages/prerender-error
+Export encountered an error on /dashboard/settings/page: /dashboard/settings, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null

@@ -1,0 +1,79 @@
+
+> houspire-vendorshub@0.1.0 build
+> next build
+
+⚠ `eslint` configuration in next.config.mjs is no longer supported. See more info here: https://nextjs.org/docs/app/api-reference/cli/next#next-lint-options
+⚠ Invalid next.config.mjs options detected: 
+⚠     Unrecognized key(s) in object: 'eslint'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+▲ Next.js 16.2.0 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 6.6s
+  Skipping validation of types
+  Finished TypeScript config validation in 9ms ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/28) ...
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+  Generating static pages using 7 workers (7/28) 
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+  Generating static pages using 7 workers (14/28) 
+The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+  Generating static pages using 7 workers (21/28) 
+✓ Generating static pages using 7 workers (28/28) in 1117ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /admin
+├ ○ /admin/add-item
+├ ○ /admin/analytics
+├ ○ /admin/compliance
+├ ○ /admin/leads
+├ ○ /admin/login
+├ ○ /admin/network
+├ ○ /admin/products
+├ ○ /admin/vendors
+├ ○ /admin/verifications
+├ ○ /dashboard
+├ ○ /dashboard/inquiries
+├ ○ /dashboard/products
+├ ○ /dashboard/products/add
+├ ○ /dashboard/projects
+├ ○ /dashboard/projects/new
+├ ○ /dashboard/reviews
+├ ○ /dashboard/settings
+├ ○ /dashboard/support
+├ ○ /dashboard/traffic
+├ ○ /help
+├ ƒ /product/[id]
+├ ○ /search
+├ ○ /signin
+├ ○ /vendor-register
+├ ƒ /vendor/[id]
+├ ƒ /vendor/[id]/about
+├ ƒ /vendor/[id]/contact
+└ ƒ /vendor/[id]/products
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
