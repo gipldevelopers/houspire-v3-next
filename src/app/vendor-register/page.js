@@ -961,7 +961,7 @@ export default function VendorRegister() {
                 </div>
 
                 <div className="grid gap-4 max-w-sm mx-auto pt-6">
-                  <Link href="/seller/dashboard">
+                  <Link href="/dashboard">
                     <Button className="w-full h-14 font-bold text-lg rounded-xl">Enter Seller Dashboard</Button>
                   </Link>
                   <Link href="/">
