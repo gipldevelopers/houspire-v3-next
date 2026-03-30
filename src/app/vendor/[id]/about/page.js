@@ -24,7 +24,7 @@ const FactItem = ({ label, value, sub }) => (
 
 export default function VendorAboutPage() {
   const { id } = useParams();
-  const vendor = featuredVendors.find(v => v.id === id) || featuredVendors[0];
+  const vendor = featuredVendors.find(v => v.id === id || (v.businessName && v.businessName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === id)) || featuredVendors[0];
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);
 
   return (

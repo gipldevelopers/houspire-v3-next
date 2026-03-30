@@ -9,7 +9,7 @@ import Link from "next/link";
 import { featuredVendors } from "@/lib/mock-data";
 
 export function VendorFooter({ vendorId }) {
-  const vendor = featuredVendors.find(v => v.id === vendorId) || featuredVendors[0];
+  const vendor = featuredVendors.find(v => v.id === vendorId || (v.businessName && v.businessName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === vendorId)) || featuredVendors[0];
 
   return (
     <footer className="bg-slate-900 text-white py-16 px-4">

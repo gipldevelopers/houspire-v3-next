@@ -26,7 +26,7 @@ function VendorCatalogContent() {
   const categoryFilter = searchParams.get("category");
   const initialSearch = searchParams.get("q") || "";
 
-  const vendor = featuredVendors.find(v => v.id === id) || featuredVendors[0];
+  const vendor = featuredVendors.find(v => v.id === id || (v.businessName && v.businessName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === id)) || featuredVendors[0];
   const vendorProducts = b2bProducts.filter(p => p.vendorName === vendor.businessName || p.vendor === vendor.businessName);
 
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);

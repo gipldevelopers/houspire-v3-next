@@ -13,7 +13,7 @@ import { featuredVendors } from "@/lib/mock-data";
 export function VendorNavbar({ vendorId, onInquiry }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const vendor = featuredVendors.find(v => v.id === vendorId) || featuredVendors[0];
+  const vendor = featuredVendors.find(v => v.id === vendorId || (v.businessName && v.businessName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === vendorId)) || featuredVendors[0];
 
   const handleInquiry = () => {
     setMobileOpen(false);

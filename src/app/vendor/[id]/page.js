@@ -23,7 +23,7 @@ import { useState } from "react";
 
 export default function VendorHomePage() {
   const { id } = useParams();
-  const vendor = featuredVendors.find(v => v.id === id) || featuredVendors[0];
+  const vendor = featuredVendors.find(v => v.id === id || (v.businessName && v.businessName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') === id)) || featuredVendors[0];
   const vendorProducts = b2bProducts.filter(p => p.vendorName === vendor.businessName || p.vendor === vendor.businessName);
 
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);

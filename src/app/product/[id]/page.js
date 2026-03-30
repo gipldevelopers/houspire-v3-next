@@ -138,7 +138,7 @@ export default function ProductDetailPage() {
               <div className="relative group overflow-hidden bg-white border-2 border-slate-50 rounded-[2rem] p-5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:border-teal-50 transition-all duration-700">
                   <div className="relative space-y-6">
                       {/* Vendor Identity */}
-                      <Link href={`/vendor/${vendor?.id || "v1"}`} className="flex items-center gap-4 group/vendor">
+                      <Link href={`/vendor/${(product.vendorName || product.vendor || "v1").toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`} className="flex items-center gap-4 group/vendor">
                         <div className="relative">
                           <div className="h-14 w-14 bg-slate-900 rounded-2xl flex items-center justify-center text-teal-400 font-black text-xl italic shadow-xl group-hover/vendor:rotate-6 transition-transform">
                             {product.vendorName?.[0] || product.vendor?.[0]}
