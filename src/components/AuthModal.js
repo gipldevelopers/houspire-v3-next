@@ -80,15 +80,22 @@ export function AuthModal({ isOpen, onOpenChange, defaultTab = "user" }) {
                    <div className="space-y-6">
                       <div className="space-y-4">
                          <div className="space-y-2">
-                            <Label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Mobile Number</Label>
+                            <Label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Email Address</Label>
                             <div className="relative group">
-                               <div className="absolute left-4 top-1/2 -translate-y-1/2 border-r pr-3 h-1/2 flex items-center text-sm font-black text-teal-600">+91</div>
-                               <Input placeholder="Enter mobile number" className="h-14 pl-16 rounded-2xl border-slate-200 focus:border-teal-500 font-bold" />
+                               <Input type="email" placeholder="Enter your email" className="h-14 px-5 rounded-2xl border-slate-200 focus:border-teal-500 font-bold" />
                             </div>
                          </div>
-                         <Button className="w-full h-14 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl font-black text-base shadow-xl shadow-teal-500/10">
-                            Get OTP <ArrowRight className="h-4 w-4 ml-2" />
-                         </Button>
+                         <div className="space-y-2">
+                            <Label className="text-[10px] font-black uppercase tracking-widest text-slate-400 ml-1">Password</Label>
+                            <div className="relative group">
+                               <Input type="password" placeholder="Enter your password" className="h-14 px-5 rounded-2xl border-slate-200 focus:border-teal-500 font-bold" />
+                            </div>
+                         </div>
+                         <Link href="/customer/dashboard" onClick={() => onOpenChange(false)} className="block w-full">
+                            <Button className="w-full h-14 bg-teal-600 hover:bg-teal-700 text-white rounded-2xl font-black text-base shadow-xl shadow-teal-500/10 mt-2">
+                               Sign In <ArrowRight className="h-4 w-4 ml-2" />
+                            </Button>
+                         </Link>
                       </div>
 
                       <div className="relative py-4 flex items-center justify-center">
@@ -103,6 +110,12 @@ export function AuthModal({ isOpen, onOpenChange, defaultTab = "user" }) {
                          <Button variant="outline" className="h-12 rounded-xl border-slate-100 font-black text-[10px] gap-2 uppercase tracking-widest hover:bg-slate-50 transition-all">
                             <Facebook className="h-4 w-4" /> Facebook
                          </Button>
+                      </div>
+
+                      <div className="mt-6 p-4 rounded-2xl bg-teal-50/50 border border-teal-100 text-center space-y-1">
+                         <p className="text-[10px] font-black uppercase tracking-widest text-teal-600">Demo Credentials</p>
+                         <p className="text-xs font-medium text-teal-800">Email: <span className="font-black select-all">customer@houspire.com</span></p>
+                         <p className="text-xs font-medium text-teal-800">Password: <span className="font-black select-all">demo123</span></p>
                       </div>
                    </div>
                 </TabsContent>

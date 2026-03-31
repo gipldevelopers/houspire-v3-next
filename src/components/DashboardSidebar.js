@@ -16,7 +16,8 @@ import {
   Sparkles,
   BarChart3,
   Briefcase,
-  Star
+  Star,
+  Wallet
 } from "lucide-react";
 import {
   Sidebar,
@@ -46,38 +47,48 @@ import { usePathname } from "next/navigation";
 
 const items = [
   {
-    title: "Overview",
+    title: "Dashboard",
     url: "/dashboard",
     icon: LayoutDashboard,
   },
   {
-    title: "Products",
+    title: "Open Rooms",
+    url: "/dashboard/rooms",
+    icon: Sparkles,
+    badge: "Live",
+  },
+  {
+    title: "My Bids",
+    url: "/dashboard/bids",
+    icon: Briefcase,
+    badge: "3",
+  },
+  {
+    title: "My Products",
     url: "/dashboard/products",
     icon: Package,
     badge: "12",
   },
   {
-    title: "Inquiries",
+    title: "Analytics",
+    url: "/dashboard/traffic",
+    icon: BarChart3,
+  },
+  {
+    title: "Messages",
     url: "/dashboard/inquiries",
     icon: MessageSquare,
     badge: "5",
   },
   {
-    title: "Projects",
-    url: "/dashboard/projects",
-    icon: Briefcase,
-    badge: "3",
+    title: "Earnings / Wallet",
+    url: "/dashboard/earnings",
+    icon: Wallet,
   },
   {
-    title: "Traffic",
-    url: "/dashboard/traffic",
-    icon: BarChart3,
-  },
-  {
-    title: "Reviews",
-    url: "/dashboard/reviews",
-    icon: Star,
-    badge: "4.8",
+    title: "Profile",
+    url: "/dashboard/settings?tab=account",
+    icon: User,
   },
 ];
 

@@ -47,6 +47,7 @@ export function Navbar() {
   const isDashboard = pathname?.startsWith("/dashboard");
   const isAdmin = pathname?.startsWith("/admin");
   const isSignIn = pathname?.startsWith("/signin");
+  const isCustomer = pathname?.startsWith("/customer");
 
   const openAuth = (tab) => {
     setAuthTab(tab);
@@ -61,7 +62,7 @@ export function Navbar() {
     );
   }, [citySearch]);
 
-  if (isDashboard || isAdmin || isSignIn) return null;
+  if (isDashboard || isAdmin || isSignIn || isCustomer) return null;
 
   return (
     <header className="sticky top-0 z-50 bg-primary/95 text-primary-foreground backdrop-blur-md border-b border-primary/20 shadow-lg">

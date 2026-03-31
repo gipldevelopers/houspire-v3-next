@@ -32,6 +32,7 @@ import { featuredVendors, trendingProducts } from "@/lib/mock-data";
 import { categoryShowcase, cities, cityImages, topCompanies, heroImg } from "@/lib/images";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import { AILandingSection } from "@/components/AILandingSection";
 import { useState, useEffect, Fragment } from "react";
 import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -469,6 +470,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* --- AI LANDING SECTION --- */}
+      <AILandingSection />
 
       {/* --- BROWSE BY CITY --- */}
       <section className="container py-16 space-y-8 mx-auto px-4">
