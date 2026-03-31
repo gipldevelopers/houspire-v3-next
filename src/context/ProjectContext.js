@@ -1,5 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, useCallback } from "react";
+import { STAGE_ORDER } from "@/types/project";
 const defaultProject = {
   stage: "UPLOAD",
   roomImage: null,
@@ -90,9 +91,26 @@ export const ProjectProvider = ({
       }]
     }));
   }, []);
+  const goBack = useCallback(() => {
+    const currentIndex = STAGE_ORDER.indexOf(project.stage);
+    if (currentIndex > 0) {
+      let prevIndex = currentIndex - 1;
+      // Skip AUCTION if not in auction mode
+      if (STAGE_ORDER[prevIndex] === "AUCTION" && project.mode !== "auction") {
+        prevIndex--;
+      }
+      // Skip BROWSE if in auction mode
+      if (STAGE_ORDER[prevIndex] === "BROWSE" && project.mode === "auction") {
+        prevIndex--;
+      }
+      setStage(STAGE_ORDER[prevIndex]);
+    }
+  }, [project.stage, project.mode, setStage]);
+
   return <ProjectContext.Provider value={{
     project,
     setStage,
+    goBack,
     setRoomImage,
     setDetectedObjects,
     setDesignDNA,
