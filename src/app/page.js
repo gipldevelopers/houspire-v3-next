@@ -627,12 +627,15 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="flex gap-6 p-1 transition-all group/card"
                     >
-                      <Link href={`/search?category=${item.title}`} className="flex gap-6 w-full">
-                        <div className="h-28 w-28 md:h-32 md:w-32 rounded-3xl bg-slate-50 border border-slate-100 flex items-center justify-center p-4 shrink-0 group-hover/card:border-primary group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-105 transition-all duration-300">
-                          <img src={item.image} alt={item.title} className="w-full h-full object-contain mix-blend-multiply group-hover/card:scale-110 transition-transform" />
-                        </div>
+                        <Link href={`/search?category=${item.title}`} className="shrink-0">
+                          <div className="h-28 w-28 md:h-32 md:w-32 rounded-3xl bg-slate-50 border border-slate-100 flex items-center justify-center p-4 group-hover/card:border-primary group-hover/card:bg-white group-hover/card:shadow-xl group-hover/card:scale-105 transition-all duration-300">
+                            <img src={item.image} alt={item.title} className="w-full h-full object-contain mix-blend-multiply group-hover/card:scale-110 transition-transform" />
+                          </div>
+                        </Link>
                         <div className="space-y-3 py-2">
-                          <h3 className="font-extrabold text-slate-900 text-lg group-hover/card:text-primary cursor-pointer transition-colors leading-tight">{item.title}</h3>
+                          <Link href={`/search?category=${item.title}`}>
+                             <h3 className="font-extrabold text-slate-900 text-lg group-hover/card:text-primary cursor-pointer transition-colors leading-tight">{item.title}</h3>
+                          </Link>
                           <ul className="space-y-2">
                             {item.items.map(subItem => (
                               <li key={subItem} className="group/sub">
@@ -646,7 +649,6 @@ export default function Home() {
                             ))}
                           </ul>
                         </div>
-                      </Link>
                     </motion.div>
                   ))}
                 </div>

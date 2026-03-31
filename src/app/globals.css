@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @layer base {
@@ -35,6 +36,13 @@
     --sidebar-accent-foreground: 214 20% 85%;
     --sidebar-border: 221 30% 15%;
     --sidebar-ring: 187 92% 38%;
+
+    --gold: 36 60% 50%;
+    --gold-light: 36 50% 92%;
+    --gold-dark: 36 60% 35%;
+    --warm-bg: 30 25% 97%;
+    --warm-surface: 30 20% 95%;
+    --canvas-bg: 30 10% 92%;
 
     --card-shadow: 0 0 0 1px rgba(0,0,0,.03), 0 2px 4px rgba(0,0,0,.05), 0 12px 24px -12px rgba(0,0,0,.05);
     --card-shadow-hover: 0 0 0 1px rgba(0,0,0,.03), 0 4px 8px rgba(0,0,0,.08), 0 16px 32px -8px rgba(0,0,0,.08);
@@ -108,6 +116,13 @@
   --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
   --color-sidebar-border: hsl(var(--sidebar-border));
   --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-gold: hsl(var(--gold));
+  --color-gold-light: hsl(var(--gold-light));
+  --color-gold-dark: hsl(var(--gold-dark));
+  --color-warm-bg: hsl(var(--warm-bg));
+  --color-warm-surface: hsl(var(--warm-surface));
+  --color-canvas: hsl(var(--canvas-bg));
   
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -128,6 +143,12 @@
   @keyframes fade-in {
     from { opacity: 0; transform: translateY(8px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
   }
 }
 

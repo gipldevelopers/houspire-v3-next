@@ -31,16 +31,16 @@ export function AILandingSection() {
                   </p>
                   
                   <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                     <Link href="/customer/design">
-                        <Button className="h-16 px-8 rounded-2xl bg-teal-600 hover:bg-teal-700 text-white font-black uppercase text-sm tracking-widest shadow-2xl shadow-teal-600/30 w-full sm:w-auto gap-3">
+                     <Button asChild className="h-16 px-8 rounded-2xl bg-teal-600 hover:bg-teal-700 text-white font-black uppercase text-sm tracking-widest shadow-2xl shadow-teal-600/30 w-full sm:w-auto gap-3">
+                        <Link href="/customer/design">
                            Upload Room Photo <ArrowRight className="h-4 w-4" />
-                        </Button>
-                     </Link>
-                     <Link href="/search">
-                        <Button variant="outline" className="h-16 px-8 rounded-2xl border-white/20 text-white bg-transparent hover:bg-white/10 font-black uppercase text-sm tracking-widest w-full sm:w-auto">
+                        </Link>
+                     </Button>
+                     <Button asChild variant="outline" className="h-16 px-8 rounded-2xl border-white/20 text-white bg-transparent hover:bg-white/10 font-black uppercase text-sm tracking-widest w-full sm:w-auto">
+                        <Link href="/search">
                            Explore Designs
-                        </Button>
-                     </Link>
+                        </Link>
+                     </Button>
                   </div>
                </div>
 
