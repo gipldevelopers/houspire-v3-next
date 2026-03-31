@@ -23,7 +23,7 @@ export const RightPanel = () => {
     project
   } = useProject();
   const StepComponent = STEP_COMPONENTS[project.stage];
-  return <div className="w-80 flex-shrink-0 bg-card border-l border-border overflow-y-auto">
+  return <div className="w-[360px] flex-shrink-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-l border-slate-200/60 dark:border-slate-800/60 overflow-y-auto shadow-[-4px_0_24px_-12px_rgba(0,0,0,0.1)] z-10 transition-colors duration-300">
       <AnimatePresence mode="wait">
         <motion.div key={project.stage} initial={{
         opacity: 0,
@@ -36,7 +36,7 @@ export const RightPanel = () => {
         x: -20
       }} transition={{
         duration: 0.3
-      }} className="p-6 h-full">
+      }} className="p-8 h-full">
           <StepComponent />
         </motion.div>
       </AnimatePresence>

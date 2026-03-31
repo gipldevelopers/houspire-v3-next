@@ -26,8 +26,8 @@ export const LeftSteps = () => {
     if (s === "AUCTION" && !project.mode && project.stage !== "AUCTION") return true;
     return true;
   });
-  return <div className="w-56 flex-shrink-0 bg-card border-r border-border p-6 flex flex-col">
-      <h3 className="font-display text-sm font-semibold text-foreground/60 uppercase tracking-wider mb-6">
+  return <div className="w-72 flex-shrink-0 bg-white/50 dark:bg-slate-900/50 backdrop-blur-xl border-r border-slate-200/60 dark:border-slate-800/60 p-8 flex flex-col shadow-sm relative z-10 transition-colors duration-300">
+      <h3 className="font-display text-xs font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-8">
         Steps
       </h3>
       <div className="space-y-1 flex-1">
@@ -35,17 +35,17 @@ export const LeftSteps = () => {
         const stageIndex = STAGE_ORDER.indexOf(stage);
         const isCurrent = stage === project.stage;
         const isPast = stageIndex < currentIndex;
-        return <div key={stage} className="relative flex items-center gap-3">
-              {i < visibleStages.length - 1 && <div className={`absolute left-[15px] top-[32px] w-0.5 h-6 ${isPast ? "bg-primary" : "bg-border"}`} />}
-              <motion.div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${isCurrent ? "bg-primary text-primary-foreground" : isPast ? "bg-primary/20 text-primary" : "bg-muted text-muted-foreground"}`} animate={isCurrent ? {
-            scale: [1, 1.1, 1]
+        return <div key={stage} className="relative flex items-center gap-4 mb-4">
+              {i < visibleStages.length - 1 && <div className={`absolute left-[19px] top-[40px] w-0.5 h-8 transition-colors duration-500 ${isPast ? "bg-teal-500" : "bg-slate-200 dark:bg-slate-800"}`} />}
+              <motion.div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 shadow-sm ${isCurrent ? "bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-teal-500/20 scale-110" : isPast ? "bg-teal-50 dark:bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-200 dark:border-teal-500/20" : "bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500"}`} animate={isCurrent ? {
+            boxShadow: ["0px 0px 0px rgba(20,184,166,0)", "0px 0px 15px rgba(20,184,166,0.3)", "0px 0px 0px rgba(20,184,166,0)"]
           } : {}} transition={{
-            duration: 1.5,
+            duration: 2,
             repeat: Infinity
           }}>
                 {STAGE_ICONS[stage]}
               </motion.div>
-              <span className={`text-sm font-medium ${isCurrent ? "text-foreground" : isPast ? "text-foreground/70" : "text-muted-foreground"}`}>
+              <span className={`text-sm font-bold tracking-wide transition-colors duration-300 ${isCurrent ? "text-slate-900 dark:text-white" : isPast ? "text-slate-600 dark:text-slate-300" : "text-slate-400 dark:text-slate-600"}`}>
                 {STAGE_LABELS[stage]}
               </span>
             </div>;
